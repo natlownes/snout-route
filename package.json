@@ -1,0 +1,28 @@
+{
+  "name": "snouter",
+  "version": "0.0.1",
+  "author": "Nat Lownes <nat.lownes@gmail.com>",
+  "description": "Routing, and just routing for the browser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cake test",
+    "build": "find ./src -iname '*.coffee' | xargs coffee -c -o lib"
+  },
+  "keywords": [
+    "routing",
+    "router",
+    "browser"
+  ],
+  "directories": {
+    "test": "test",
+    "src": "src",
+    "lib": "lib"
+  },
+  "license": "BSD",
+  "devDependencies": {
+    "coffee-script": "~1.6.0",
+    "honk-cake": "0.0.5",
+    "mocha": "~1.17.1",
+    "chai": "~1.9.0"
+  }
+}

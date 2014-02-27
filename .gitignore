@@ -1,0 +1,3 @@
+# for js distribution
+lib/*
+node_modules

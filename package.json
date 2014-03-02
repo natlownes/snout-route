@@ -6,6 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cake test",
+    "ci:test": "npm run lint && cake test",
+    "lint": "find src test -iname *.coffee | xargs coffeelint",
     "build": "find ./src -iname '*.coffee' | xargs coffee -c -o lib"
   },
   "keywords": [
@@ -23,6 +25,7 @@
     "coffee-script": "~1.6.0",
     "honk-cake": "0.0.5",
     "mocha": "~1.17.1",
-    "chai": "~1.9.0"
+    "chai": "~1.9.0",
+    "coffeelint": "~1.1.0"
   }
 }

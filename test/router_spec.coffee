@@ -96,15 +96,18 @@ describe 'router', ->
     it 'should remove route from routes', ->
       router = new Snouter
       router.register '/dogs/:name', (name) ->
+      router.register '/dogs/:name/sizes', (name) ->
+      router.register '/dogs/:name/sizes/:how_big', (name) ->
 
       router.unregister '/dogs/:name'
 
-      expect(router.routes).to.be.empty
+      expect(router.routes).to.have.length 2
 
       expect(router.get('/dogs/stro')).to.be.undefined
 
     it 'should return undefined for matching routes after removal', ->
       router = new Snouter
+      router.register '/dogs/:name/sizes', (name) ->
       router.register '/dogs/:name', (name) ->
 
       router.unregister '/dogs/:name'

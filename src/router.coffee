@@ -18,11 +18,11 @@ class Router
     )
 
   unregister: (pattern) ->
-    route = do (pattern) =>
-      for r in @routes
-        return r if r.stringPattern is pattern
+    routeIndex = do (pattern) =>
+      for r, i in @routes
+        return i if r.stringPattern is pattern
 
-    @routes.pop(route)
+    if routeIndex? then @routes.splice(routeIndex, 1)
 
   get: (requestedRoute) ->
     route = do (requestedRoute) =>

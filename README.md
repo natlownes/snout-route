@@ -2,6 +2,8 @@
 
 ![Snout:  Route!](http://i.imgur.com/tu7IGHX.jpg)
 
+[![Build Status](https://travis-ci.org/natlownes/snout-route.png?branch=master)](https://travis-ci.org/natlownes/snout-route)
+
 tiny routing for the browser, and for your snout, and go lay down, and okay good
 boy c'mere.
 

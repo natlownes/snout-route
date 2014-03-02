@@ -1,12 +1,11 @@
 {
-  "name": "snouter",
+  "name": "snout-route",
   "version": "0.0.1",
   "author": "Nat Lownes <nat.lownes@gmail.com>",
   "description": "Routing, and just routing for the browser.",
   "main": "index.js",
   "scripts": {
-    "test": "cake test",
-    "ci:test": "npm run lint && cake test",
+    "test": "npm run lint && cake test",
     "lint": "find src test -iname *.coffee | xargs coffeelint",
     "build": "find ./src -iname '*.coffee' | xargs coffee -c -o lib"
   },

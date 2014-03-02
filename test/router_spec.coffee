@@ -1,4 +1,5 @@
-expect = require('chai').expect
+expect  = require('chai').expect
+
 Snouter = require('../src/router')
 
 

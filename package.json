@@ -9,6 +9,11 @@
     "lint": "find src test -iname *.coffee | xargs coffeelint",
     "build": "find ./src -iname '*.coffee' | xargs coffee -c -o lib"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natlownes/snout-route.git"
+  },
+  "homepage": "https://github.com/natlownes/snout-route",
   "keywords": [
     "routing",
     "router",

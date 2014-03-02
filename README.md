@@ -31,7 +31,7 @@ router.register("/dogs/:name/size/:size_number", func)
 [args, func] = router.get("/dogs/strodog/size/14")
 
 console.log args
-# => { name: 'strodog', size: 14 }
+# => { name: 'strodog', size: '14' }
 assert args.name is 'strodog'
 assert args.size_number is '14'
 

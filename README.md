@@ -15,7 +15,7 @@ or anything like that.  that would be in a separate lib
 
 assert = require 'assert'
 
-Router = require('snout-route')
+Router = require 'snout-route'
 
 
 router = new Router

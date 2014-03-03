@@ -36,7 +36,9 @@ class Router
     for name, i in route.paramNames
       args[name] = params[i]
 
-    [args, @_curry(route.action, params...)]
+    func = @_curry(route.action, params...)
+    func.args = args
+    func
 
   _extractParams: (regex, routeString) ->
     new RegExp(regex).exec(routeString).slice(1)

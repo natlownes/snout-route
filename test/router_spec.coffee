@@ -63,19 +63,19 @@ describe 'router', ->
 
       expect(result).to.be.undefined
 
-    it 'should return an object with args', ->
+    it 'should return a function with an args key', ->
       router = new Snouter
       f = (name, size) ->
       route = '/dogs/:name/s/:somewhat_large'
 
       router.register route, f
 
-      [args, func] = router.get '/dogs/strodog/s/medium_dog'
+      func = router.get '/dogs/strodog/s/medium_dog'
 
-      expect(args.name).to.equal 'strodog'
-      expect(args.somewhat_large).to.equal 'medium_dog'
+      expect(func.args.name).to.equal 'strodog'
+      expect(func.args.somewhat_large).to.equal 'medium_dog'
 
-    it 'should return a curried function with args', ->
+    it 'should return a curried function with args, bound to router object', ->
       router = new Snouter
       f = (name, size, three, four) ->
         expect(name).to.equal 'strodog'
@@ -87,7 +87,7 @@ describe 'router', ->
       route = '/dogs/:name/s/:somewhat_large'
       router.register route, f
 
-      [args, func] = router.get '/dogs/strodog/s/medium'
+      func = router.get '/dogs/strodog/s/medium'
 
       func(3,4)
 

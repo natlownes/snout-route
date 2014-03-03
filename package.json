@@ -1,6 +1,6 @@
 {
   "name": "snout-route",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Nat Lownes <nat.lownes@gmail.com>",
   "description": "Routing, and just routing for the browser.",
   "main": "index.js",

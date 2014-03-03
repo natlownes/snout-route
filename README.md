@@ -20,22 +20,23 @@ Router = require('snout-route')
 
 router = new Router
 
-func = (name, size_number, additional) ->
+router.register "/dogs/:name/size/:size_number", (name, size_number, addl) ->
   assert name        is 'strodog'
   assert size_number is '14'
-  assert additional  is 'tacking additional args'
+  assert addl        is 'tacking additional args'
   console.log 'snouting complete!'
 
-router.register("/dogs/:name/size/:size_number", func)
+func = router.get("/dogs/strodog/size/14")
+miss = router.get("/food/20000")
 
-[args, func] = router.get("/dogs/strodog/size/14")
-
-console.log args
+console.log func.args
 # => { name: 'strodog', size: '14' }
-assert args.name is 'strodog'
-assert args.size_number is '14'
+assert func.args.name is 'strodog'
+assert func.args.size_number is '14'
 
-func('tacking additional args')
+func?('tacking additional args')
+
+assert miss is undefined
 
 ```
 
